@@ -1,7 +1,31 @@
 // Mixins in here
 
 // Border Mixin
-// Mixin
 .bordered() {
     border-bottom: 2px dashed @navigation-border;
-  }
+}
+
+// Button parametric mixin
+.custom-button(@width: 82%, @bg-color: @button-bg, @font-color: white) {
+    width: @width;
+    text-align: center;
+    background-color: @button-bg;
+    border-radius: 10px;
+    padding: 10px 5%;
+    font-size: 1.5rem;
+    color: @font-color;
+    cursor: pointer;
+    outline: none;
+
+  
+    &:hover {
+      background-color: @font-color;
+      color: @bg-color;
+    }
+  
+    @media @mobile {
+        width: 95%;
+        font-size: 18px;
+        height: 38px;
+    }
+}
